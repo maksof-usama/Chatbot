@@ -37,6 +37,9 @@
                     }
 
                     .chat-container {
+                        max-height: calc(100vh - 58px);
+                        overflow: hidden;
+                        overflow-y: auto;
                         .questoin{
                             padding: 10px;
                             .text-mesg{
@@ -93,6 +96,11 @@
                                 background: none;
                                 border: 1px solid red;
                                 border-radius: 50px;
+                                &::placeholder{
+                                    color: #9393A4;
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                }
                             }
                             button{
                                 width: 30px;
@@ -112,3 +120,29 @@
         }
     }
 }
+/* Track */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ECECF1;
+    border-radius: 5px;
+  }
+  
+  /* Track on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #ECECF1;
+  }
+  
+  /* Track when dragged */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #333;
+  }
+  
+  /* Track background */
+  ::-webkit-scrollbar-track {
+    background-color: #fff;
+    
+  }
