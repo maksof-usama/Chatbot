@@ -10,7 +10,6 @@ import { ChatComponent } from './pages/chat/chat.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
   ],
   imports: [
     CommonModule,

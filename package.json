@@ -18,7 +18,10 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@itzsunny/storageapi": "^0.0.10",
+    "@types/markdown-it": "^12.2.3",
     "bootstrap": "^5.3.0",
+    "markdown-it": "^13.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
