@@ -70,7 +70,7 @@ export class ChatComponent implements OnInit {
           this.user = null
           throw new Error(preDefinedMessages[3]);
         }
-        this.pushChat(preDefinedMessages[4]);
+        this.pushChat(preDefinedMessages[4].replace('Thank you for your email verification, ', ''));
         session.set(USER_KEY, response);
         return;
       }
