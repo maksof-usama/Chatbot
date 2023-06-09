@@ -2,6 +2,8 @@
 .main {
     padding: 0px;
     margin: 0px;
+
+    font-family: 'Montserrat', sans-serif;
     background-color: #f1f3f4;
 
     .content {
@@ -10,10 +12,13 @@
         max-width: 1440px;
 
         .chat-main {
+
+
             .chat-box-main {
                 width: 100%;
                 min-height: 100vh;
                 background-color: #fff;
+
                 .chat-box {
                     position: relative;
                     min-height: 100vh;
@@ -40,35 +45,107 @@
                     .chat-container {
                         max-height: calc(100vh - 58px);
                         overflow: hidden;
+                        padding: 10px;
                         overflow-y: auto;
-                        .questoin{
+
+                        /* Track */
+                        &::-webkit-scrollbar {
+                            width: 8px;
+                        }
+
+                        /* Thumb */
+                        &::-webkit-scrollbar-thumb {
+                            background-color: transparent;
+                            border-radius: 5px;
+                        }
+
+                        /* Track on hover */
+                        &::-webkit-scrollbar-thumb:hover {
+                            background-color: #ECECF1;
+                        }
+
+                        /* Track when dragged */
+                        &::-webkit-scrollbar-thumb:active {
+                            background-color: #333;
+                        }
+
+                        /* Track background */
+                        &::-webkit-scrollbar-track {
+                            background-color: #fff;
+
+                        }
+
+                        &:hover {
+                            &::-webkit-scrollbar-thumb {
+                                background-color: #ececf1;
+
+                            }
+                        }
+
+                        .questoin {
                             padding: 10px;
-                            .text-mesg{
+
+                            .text-mesg {
                                 display: flex;
                                 align-items: start;
-                                margin: 20px 0px;
-                                .user-icon{
-                                    span{
+                                margin: 10px 0px;
+
+                                .mesg-main {
+                                    .mesg {
+                                        background-color: #f1f3f4;
+                                        padding: 6px;
+                                        border-radius: 10px;
+
+                                        p {
+                                            margin: 0px;
+                                        }
+                                    }
+                                }
+
+                                .user-icon {
+                                    span {
                                         margin-right: 10px;
+                                        margin-bottom: 5px;
                                         width: 30px;
                                         height: 30px;
                                         display: block;
                                         border-radius: 20px;
                                         overflow: hidden;
-                                        margin-bottom: 5px;
                                         background-color: #da251e;
-                                        img{
+
+                                        img {
                                             width: 100%;
                                         }
                                     }
                                 }
                             }
+
+                            &:not(.answer) {
+                                .text-mesg {
+                                    flex-direction: row-reverse;
+
+                                    .mesg {
+                                        background-color: #e0e0e0;
+                                    }
+
+                                    .user-icon {
+                                        span {
+                                            background: none;
+                                            margin-right: unset;
+                                            margin-left: 10px;
+                                        }
+                                    }
+
+                                }
+                            }
                         }
-                        .answer{
-                            border: 1px solid #d4d4d4;
-                            border-right: none;
-                            border-left: none;
-                            background-color: #F7F7F8;
+
+                        .answer {
+                            // border: 1px solid #d4d4d4;
+                            // border-right: none;
+                            // border-left: none;
+                            // background-color: #F7F7F8;
+
                         }
                     }
 
@@ -83,31 +160,33 @@
                             width: 100%;
                             display: flex;
                             align-items: center;
+                            justify-content: space-between;
                             padding: 10px 15px;
                             background-color: #fff;
 
-                            input{
+                            input {
                                 font-size: 15px;
                                 padding: 7px 15px;
                                 outline: none;
                                 box-shadow: none;
-                                width: 90%;
+                                width: 93%;
                                 margin: 0px;
                                 margin-right: 10px;
                                 background: none;
                                 border: 1px solid red;
                                 border-radius: 50px;
-                                &::placeholder{
+
+                                &::placeholder {
                                     color: #9393A4;
                                     font-weight: 600;
                                     font-size: 15px;
                                 }
                             }
-                            button{
+
+                            button {
                                 width: 30px;
                                 height: 30px;
                                 padding: 0px;
-                                background-color: #4CAF50;
                                 color: white;
                                 border: none;
                                 border-radius: 50%;
@@ -121,29 +200,8 @@
         }
     }
 }
-/* Track */
-::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  /* Thumb */
-  ::-webkit-scrollbar-thumb {
-    background-color: #ECECF1;
-    border-radius: 5px;
-  }
-  
-  /* Track on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #ECECF1;
-  }
-  
-  /* Track when dragged */
-  ::-webkit-scrollbar-thumb:active {
-    background-color: #333;
-  }
-  
-  /* Track background */
-  ::-webkit-scrollbar-track {
-    background-color: #fff;
-    
-  }
+
+.btn-disbaled {
+    background-color: #9393A4 !important;
+    pointer-events: none;
+}

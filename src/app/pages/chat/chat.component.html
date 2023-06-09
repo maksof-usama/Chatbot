@@ -7,34 +7,15 @@
           <div class="chat-box-main">
             <div class="chat-box">
               <!-- <div class="no-data">
-                                <div class="img-box">
-                                    <img src="../../../assets/img/robot-01.svg" alt="robot-01.svg">
-                                </div>
-                            </div> -->
-              <app-chat-container
-                [chats]="chats"
-                [finalMessage]="finalMessage"
-              ></app-chat-container>
+                  <div class="img-box">
+                      <img src="../../../assets/img/robot-01.svg" alt="robot-01.svg">
+                  </div>
+              </div> -->
+              <app-chat-container [chats]="chats" [finalMessage]="finalMessage"></app-chat-container>
               <div class="chat-footer-main" *ngIf="!finalMessage">
-                <form
-                  (ngSubmit)="submitHandler()"
-                  [formGroup]="chatForm"
-                  class="chat-footer"
-                >
-                  <input
-                    type="text"
-                    formControlName="question"
-                    placeholder="send us a meesage"
-                  />
-                  <ng-container
-                    [ngTemplateOutlet]="formError"
-                    [ngTemplateOutletContext]="{
-                      validation: 'required',
-                      message: 'Question is required.',
-                      control: chatForm.controls['question']
-                    }"
-                  ></ng-container>
-                  <button type="submit">
+                <form (ngSubmit)="submitHandler()" [formGroup]="chatForm" class="chat-footer">
+                  <input type="text" formControlName="question" placeholder="send us a meesage" />
+                  <button type="submit" [ngClass]="{'btn-disbaled' :!chatForm.valid }">
                     <i class="fa-solid fa-chevron-right"></i>
                   </button>
                 </form>
@@ -47,22 +28,3 @@
     </div>
   </div>
 </div>
-
-<ng-template
-  #formError
-  let-control="control"
-  let-message="message"
-  let-validation="validation"
->
-  <ng-container
-    *ngIf="
-      submitted &&
-      control.hasError(validation) &&
-      (control.dirty || control.touched)
-    "
-  >
-    <div>
-      {{ message }}
-    </div>
-  </ng-container>
-</ng-template>
